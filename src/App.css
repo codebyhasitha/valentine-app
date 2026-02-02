@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ff1744 0%, #d81b60 25%, #8b1a8b 50%, #5a1a8b 75%, #2e1a47 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Romantic floating hearts background */
+body::before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(216, 27, 96, 0.1) 0%, transparent 50%);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.container > div {
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe4ee 100%);
+  padding: 80px 100px;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(216, 27, 96, 0.3), 0 0 40px rgba(255, 107, 107, 0.2);
+  border: 2px solid rgba(216, 27, 96, 0.1);
+  width: 100%;
+  max-width: 900px;
+  animation: slideIn 0.6s ease-out;
+}
+
+h1 {
+  background: linear-gradient(135deg, #d81b60 0%, #c2185b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  position: relative;
+  min-height: 70px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 18px 45px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #ff1744 0%, #d81b60 100%);
+  color: white;
+  position: relative;
+}
+
+.yes-btn:hover {
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(216, 27, 96, 0.4);
+}
+
+.yes-btn:active {
+  transform: scale(0.98);
+}
+
+.no-btn {
+  background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+  color: #424242;
+  position: relative;
+}
+
+.no-btn:hover {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.love-page {
+  animation: fadeIn 0.8s ease-in;
+}
+
+.love-message {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #d81b60 0%, #ff1744 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: heartbeat 1.2s ease-in-out infinite;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 40px 0;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(216, 27, 96, 0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.image-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(216, 27, 96, 0.4);
+}
+
+.love-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover .love-image {
+  transform: scale(1.05);
+}
+
+.subtitle {
+  color: #d81b60;
+  font-size: 1.8rem;
+  margin-top: 40px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Floating animation for background */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% { 
+    transform: scale(1.15);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container > div {
+    padding: 40px 30px;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .love-message {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  .images-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  .love-image {
+    height: 180px;
+  }
+
+  .buttons {
+    gap: 15px;
+  }
+
+  button {
+    padding: 15px 35px;
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    margin-top: 25px;
+  }
+}
