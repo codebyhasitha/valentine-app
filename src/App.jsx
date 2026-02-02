@@ -26,16 +26,16 @@ function App() {
           <h1 className="love-message">I Love You! ❤️</h1>
           <div className="images-grid">
             <div className="image-card">
-              <img src="/Image 1.jpeg" alt="Memory 1" className="love-image" />
+              <img src={`${import.meta.env.BASE_URL}Image 1.jpeg`} alt="Memory 1" className="love-image" />
             </div>
             <div className="image-card">
-              <img src="/Image 2.jpeg" alt="Memory 2" className="love-image" />
+              <img src={`${import.meta.env.BASE_URL}Image 2.jpeg`} alt="Memory 2" className="love-image" />
             </div>
             <div className="image-card">
-              <img src="/Image 3.jpeg" alt="Memory 3" className="love-image" />
+              <img src={`${import.meta.env.BASE_URL}Image 3.jpeg`} alt="Memory 3" className="love-image" />
             </div>
             <div className="image-card">
-              <img src="/Image 4.jpeg" alt="Memory 4" className="love-image" />
+              <img src={`${import.meta.env.BASE_URL}Image 4.jpeg`} alt="Memory 4" className="love-image" />
             </div>
           </div>
           <p className="subtitle">Thank you for being my Valentine! 💕</p>
