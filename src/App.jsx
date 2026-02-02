@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+import img1 from '/Image 1.jpeg'
+import img2 from '/Image 2.jpeg'
+import img3 from '/Image 3.jpeg'
+import img4 from '/Image 4.jpeg'
 
 function App() {
   const [showLoveMessage, setShowLoveMessage] = useState(false)
@@ -26,16 +30,16 @@ function App() {
           <h1 className="love-message">I Love You! ❤️</h1>
           <div className="images-grid">
             <div className="image-card">
-              <img src={`${import.meta.env.BASE_URL}Image 1.jpeg`} alt="Memory 1" className="love-image" />
+              <img src={img1} alt="Memory 1" className="love-image" />
             </div>
             <div className="image-card">
-              <img src={`${import.meta.env.BASE_URL}Image 2.jpeg`} alt="Memory 2" className="love-image" />
+              <img src={img2} alt="Memory 2" className="love-image" />
             </div>
             <div className="image-card">
-              <img src={`${import.meta.env.BASE_URL}Image 3.jpeg`} alt="Memory 3" className="love-image" />
+              <img src={img3} alt="Memory 3" className="love-image" />
             </div>
             <div className="image-card">
-              <img src={`${import.meta.env.BASE_URL}Image 4.jpeg`} alt="Memory 4" className="love-image" />
+              <img src={img4} alt="Memory 4" className="love-image" />
             </div>
           </div>
           <p className="subtitle">Thank you for being my Valentine! 💕</p>
